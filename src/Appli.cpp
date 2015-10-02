@@ -14,7 +14,7 @@ int main(void) {
   Color* c2 = new Color(81,135,5);
   Rectangle* r2 = new Rectangle(10,10,100,200,c2);
   
-  Circle* ci = new Circle(250, 400, 50, c2);
+  Circle* ci = new Circle(250, 400, c2, 50, 1, 1);
   
   win->addRect(r1);
   win->addRect(r2);

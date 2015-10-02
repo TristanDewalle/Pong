@@ -1,19 +1,19 @@
 #ifndef CIRCLE
 #define CIRCLE
 
-#include "Color.h"
-#include "SFML/Graphics.hpp"
+#include "Mobile.h"
 
-class Circle {
+class Circle : public Mobile {
   public :
  
     Circle(int, int, int, Color*);
+    Circle (int x, int y, int r, int g, int b, int rad, double direction, int speed);
+    Circle (int x, int y, Color* color, int rad, double direction,  int speed);
+
     void draw(sf::RenderWindow *win) const;
     void move(int, int);
     
   private:
-    int _x, _y, _r;
-    Color* _c;
 
 };
 #endif
