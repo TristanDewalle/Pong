@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Window.h"
-#include "Rectangle.h"
-#include "Circle.h"
 
 using namespace std;
 
@@ -19,32 +17,40 @@ sf::RenderWindow* Window::getRW(void){
   return _win;
 }
 
-void Window::addRect(Rectangle* r){
-  _rects.push_back(r);
+void Window::addTriangle(Triangle* t){
+  _triangles.push_back(t);
 }
 
 void Window::addCirc(Circle * c){
   _circs.push_back(c);
 }
 
+void Window::addWall(Wall* t){
+  _walls.push_back(t);
+}
 
 void Window::drawAll(){
-  int s = _rects.size();
+  int s = _walls.size();
   for(int i=0; i<s; i++){
-    _rects[i]->draw(this->_win);
+    _walls[i]->draw(this->_win);
   }
   s=_circs.size();
   for(int i=0; i<s; i++){
     _circs[i]->draw(this->_win);
   }
+   s=_triangles.size();
+  for(int i=0; i<s; i++){
+    _triangles[i]->draw(this->_win);
+  }
+  
   
   }
 
 void Window::moveAll(int dx, int dy){
-  int s = _rects.size();
+  int s = _triangles.size();
   for(int i=0; i<s; i++){
-    _rects[i]->move(dx,dy);
-    _rects[i]->draw(this->_win);
+    _triangles[i]->move(dx,dy);
+    _triangles[i]->draw(this->_win);
   }
   s = _circs.size();
   for(int i=0; i<s; i++){

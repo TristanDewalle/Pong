@@ -12,7 +12,8 @@ class Triangle : public Mobile {
     void draw(sf::RenderWindow *win) const;
     void move(int dx, int dy);
     
-    Triangle (int x, int y, int r, int g, int b, double d, int side, int s);
+    Triangle(int x,int y, Color* c,int rad, double direction, int speed);
+    Triangle(int x,int y, int r, int g, int b,int rad, double direction, int speed);
 };
 
 #endif
